@@ -5,13 +5,15 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   href?: string;
+  target?: string;
 }
 export function Button({
   variant = 'primary',
   children,
   onClick,
   className = '',
-  href
+  href,
+  target
 }: ButtonProps) {
   const baseStyles =
     'px-6 py-3 rounded-lg font-heading font-medium transition-all duration-200 inline-flex items-center justify-center';
@@ -24,7 +26,7 @@ export function Button({
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
   if (href) {
     return (
-      <a href={href} className={combinedClassName}>
+      <a href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} className={combinedClassName}>
         {children}
       </a>);
 

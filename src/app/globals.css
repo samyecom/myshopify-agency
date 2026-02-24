@@ -8,6 +8,10 @@
 
 /* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-open-sans), sans-serif;
   color: var(--color-body);

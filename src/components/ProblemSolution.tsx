@@ -22,7 +22,7 @@ export function ProblemSolution() {
 
   return (
     <section className="w-full bg-[#013D44] relative overflow-hidden">
-      <div className="max-w-container mx-auto px-8 py-10 md:py-12 relative z-10">
+      <div className="max-w-container mx-auto px-6 md:px-8 py-12 md:py-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export function ProblemSolution() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-[32px] font-bold text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-[30px] font-bold text-white mb-4 font-heading">
             Common Shopify Challenges — Solved
           </h2>
           <p className="text-slate-400 text-lg md:text-[16px] max-w-2xl mx-auto leading-relaxed">
@@ -38,7 +38,7 @@ export function ProblemSolution() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Problems Column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

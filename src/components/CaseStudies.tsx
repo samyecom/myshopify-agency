@@ -32,8 +32,8 @@ export function CaseStudies() {
     }];
 
   return (
-    <section id="work" className="w-full bg-[#013D44] py-10 md:py-12">
-      <div className="max-w-container mx-auto px-8">
+    <section id="work" className="w-full bg-[#013D44] py-12 md:py-12">
+      <div className="max-w-container mx-auto px-6 md:px-8">
         <motion.div
           initial={{
             opacity: 0,
@@ -57,7 +57,7 @@ export function CaseStudies() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {cases.map((caseStudy, index) =>
             <motion.div
               key={index}
@@ -78,7 +78,7 @@ export function CaseStudies() {
                 delay: index * 0.1
               }}>
 
-              <Card className="overflow-hidden bg-[#001E21] border-white/5 hover:border-[#CAF389]/30 transition-all duration-300 group cursor-pointer shadow-xl shadow-black/20 rounded-[12px]">
+              <Card className="overflow-hidden !bg-[#001E21] border-white/5 hover:border-[#CAF389]/30 transition-all duration-300 group cursor-pointer shadow-xl shadow-black/20 rounded-[12px]">
                 <div className="aspect-[4/3] bg-slate-800 overflow-hidden relative">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
                   <img

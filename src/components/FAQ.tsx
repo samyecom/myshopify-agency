@@ -35,8 +35,8 @@ export function FAQ() {
     }];
 
   return (
-    <section id="faq" className="w-full bg-[#013D44] py-10 md:py-12">
-      <div className="max-w-container mx-auto px-8">
+    <section id="faq" className="w-full bg-[#013D44] py-12 md:py-12">
+      <div className="max-w-container mx-auto px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-[32px] font-bold text-white mb-4 font-heading">
+          <h2 className="text-3xl md:text-[30px] font-semibold text-white mb-4 font-heading">
             Frequently Asked Questions
           </h2>
           <p className="text-slate-300 text-lg md:text-[16px] max-w-2xl mx-auto leading-relaxed">
@@ -52,7 +52,7 @@ export function FAQ() {
           </p>
         </motion.div>
 
-        <div className="max-w-[1000px] mx-auto space-y-3">
+        <div className="space-y-3">
           {faqs.map((faq, index) =>
             <motion.div
               key={index}

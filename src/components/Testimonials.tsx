@@ -10,36 +10,37 @@ export function Testimonials() {
       logoImg: '/shapemour.png',
       logoText: 'Shapemour',
       quote: "They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days. They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days.",
-      name: 'Sarah Chen',
+      name: 'Arjun Mehta',
       brand: 'Shapemour',
-      initials: 'SC',
+      initials: 'AM',
       flag: 'https://flagcdn.com/w40/in.png'
     },
     {
-      logoImg: '/nutrisum.png', // Placeholder using similar pattern
+      logoImg: '/nutrisum.png',
       logoText: 'Nutrisum',
       quote: "They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days. They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days.",
-      name: 'Michael Rodriguez',
+      name: 'Priya Sharma',
       brand: 'Nutrisum',
-      initials: 'SC',
+      initials: 'PS',
       flag: 'https://flagcdn.com/w40/in.png'
     },
     {
-      logoImg: '/houseofr.png', // Placeholder using similar pattern
+      logoImg: '/houseofr.png',
       logoText: 'House of R',
-      quote: "They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days. They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days.",
-      name: 'Emily Watson',
+      quote: "They didn't just build our store — she engineered a conversion machine. Revenue doubled in 90 days. They didn't just build our store — they engineered a conversion machine. Revenue doubled in 90 days.",
+      name: 'Rohan Gupta',
       brand: 'House of R',
-      initials: 'SC',
+      initials: 'RG',
       flag: 'https://flagcdn.com/w40/in.png'
     },
     {
-      logoText: 'LuxeLiving',
+      logoImg: '/logos/enerj.png',
+      logoText: 'Enerj',
       quote: "The speed optimization work they did was phenomenal. Our bounce rate dropped by 35% and mobile conversions are at an all-time high.",
       name: 'David Park',
-      brand: 'LuxeLiving',
+      brand: 'Enerj',
       initials: 'DP',
-      flag: 'https://flagcdn.com/w40/ca.png'
+      flag: 'https://flagcdn.com/w40/gb.png'
     }
   ];
 
@@ -51,7 +52,9 @@ export function Testimonials() {
 
   useEffect(() => {
     const updateSlidesPerView = () => {
-      setSlidesPerView(window.innerWidth < 1200 ? 1 : 3);
+      if (window.innerWidth < 768) setSlidesPerView(1);
+      else if (window.innerWidth < 1200) setSlidesPerView(2);
+      else setSlidesPerView(3);
     };
     updateSlidesPerView();
     window.addEventListener('resize', updateSlidesPerView);
@@ -67,9 +70,9 @@ export function Testimonials() {
   };
 
   return (
-    <section className="w-full bg-[#001E21] py-10 md:py-12 px-8 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-16">
+    <section id="testimonials" className="w-full bg-[#001E21] py-12 md:py-24 px-4 md:px-8 overflow-hidden">
+      <div className="max-w-container mx-auto">
+        <div className="text-center mb-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +116,7 @@ export function Testimonials() {
               {displayTestimonials.map((t, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-[calc(33.333%-16px)] shrink-0"
+                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0"
                 >
                   <div className="bg-[#013D44] p-8 md:p-10 rounded-[20px] h-full border border-white/5 relative flex flex-col group transition-all duration-300">
                     {/* Top Right Corner Icon (Flag or Placeholder) */}
@@ -148,7 +151,7 @@ export function Testimonials() {
 
                     {/* Quote */}
                     <div className="mb-10 flex-1">
-                      <p className="text-[#98A3A4] text-[15px] leading-relaxed">
+                      <p className="text-white text-[15px] leading-relaxed">
                         "{t.quote}"
                       </p>
                     </div>
@@ -159,10 +162,10 @@ export function Testimonials() {
                         {t.initials}
                       </div>
                       <div>
-                        <h4 className="text-white font-bold text-[15px]">
+                        <h4 className="text-white font-medium text-[18px]">
                           {t.name}
                         </h4>
-                        <p className="text-[#98A3A4] text-[13px]">
+                        <p className="text-[#98A3A4] text-[14px]">
                           {t.brand}
                         </p>
                       </div>

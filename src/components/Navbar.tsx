@@ -26,14 +26,14 @@ export function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-                ? 'bg-[#013D44]/90 backdrop-blur-sm shadow-lg py-2'
-                : 'bg-[#013D44]/60 backdrop-blur-sm py-2'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 overflow-hidden ${isScrolled
+                ? 'bg-[#013D44]/90 backdrop-blur-sm shadow-lg py-1 md:py-2'
+                : 'bg-[#013D44]/60 backdrop-blur-sm py-2 md:py-3'
                 }`}
         >
-            <div className="max-w-container mx-auto px-8 flex items-center justify-between">
+            <div className="max-w-container mx-auto px-4 md:px-8 flex items-center justify-between">
                 <a href="/" className="flex items-center">
-                    <img src="/logo.png" alt="MyShopify Agency" className="h-10 w-auto min-w-[120px] object-contain" />
+                    <img src="/white-logo.png" alt="MyShopify Agency" className="h-12 w-auto" />
                 </a>
 
                 {/* Desktop Links */}
@@ -42,14 +42,15 @@ export function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-white/80 hover:text-white font-heading font-medium transition-colors text-[13px] tracking-wide"
+                            className="text-white hover:text-white font-heading font-regular transition-colors text-[13px] tracking-wide"
                         >
                             {link.name}
                         </a>
                     ))}
                     <Button
                         variant="primary"
-                        className="px-6 py-2 text-[13px] bg-[#CAF389] text-black border-none rounded-full font-bold transition-all"
+                        href="#cta"
+                        className="px-6 py-2 text-[14px] !bg-[#CAF389] !text-black border-none rounded-full font-bold transition-all"
                     >
                         Get Started
                     </Button>
@@ -73,18 +74,18 @@ export function Navbar() {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
                     >
-                        <div className="px-6 py-8 flex flex-col gap-6 bg-[#013D44] border-t border-white/10">
+                        <div className="px-6 py-10 flex flex-col gap-8 bg-[#013D44] border-t border-white/10 min-h-[60vh] justify-center items-center text-center">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-medium text-white/90"
+                                    className="text-2xl font-semibold text-white/90 hover:text-[#CAF389] transition-colors"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <Button variant="primary" className="w-full bg-[#CAF389] hover:bg-[#CAF389] text-[#013D44] border-none rounded-full font-bold">
+                            <Button variant="primary" href="#cta" className="w-full max-w-xs py-4 text-lg bg-[#CAF389] hover:bg-[#CAF389]/90 text-[#013D44] border-none rounded-full font-bold" onClick={() => setIsMobileMenuOpen(false)}>
                                 Get Started
                             </Button>
                         </div>
