@@ -1,9 +1,9 @@
 
 export default {
   content: [
-  './index.html',
-  './src/**/*.{js,ts,jsx,tsx}'
-],
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}'
+  ],
   theme: {
     extend: {
       colors: {
@@ -26,10 +26,11 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['var(--font-kanit)', 'sans-serif'],
+        sans: ['var(--font-open-sans)', 'sans-serif'],
       },
       maxWidth: {
-        container: '1200px',
+        container: '1440px',
       },
     },
   },

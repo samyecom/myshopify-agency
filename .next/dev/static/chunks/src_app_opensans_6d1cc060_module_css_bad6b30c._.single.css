@@ -1,0 +1,43 @@
+/* [project]/src/app/opensans_6d1cc060.module.css [app-client] (css) */
+@font-face {
+  font-family: openSans;
+  src: url("../media/OpenSans_Regular-s.p.5fe82afd.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: openSans;
+  src: url("../media/OpenSans_Semibold-s.p.9228d88c.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: openSans;
+  src: url("../media/OpenSans_Bold-s.p.e46d4e0b.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: openSans Fallback;
+  src: local(Arial);
+  ascent-override: 101.48%;
+  descent-override: 27.82%;
+  line-gap-override: 0.0%;
+  size-adjust: 105.33%;
+}
+
+.opensans_6d1cc060-module__G89TzG__className {
+  font-family: openSans, openSans Fallback;
+}
+
+.opensans_6d1cc060-module__G89TzG__variable {
+  --font-open-sans: "openSans", "openSans Fallback";
+}
+
+/*# sourceMappingURL=src_app_opensans_6d1cc060_module_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,51 @@
+/* [project]/src/app/kanit_aed72a9a.module.css [app-client] (css) */
+@font-face {
+  font-family: kanit;
+  src: url("../media/Kanit_Regular-s.p.d0000e6f.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kanit;
+  src: url("../media/Kanit_Medium-s.p.b767ab2b.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kanit;
+  src: url("../media/Kanit_SemiBold-s.p.b898b745.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kanit;
+  src: url("../media/Kanit_Bold-s.p.48766c0b.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: kanit Fallback;
+  src: local(Arial);
+  ascent-override: 101.67%;
+  descent-override: 36.51%;
+  line-gap-override: 0.0%;
+  size-adjust: 108.19%;
+}
+
+.kanit_aed72a9a-module__zhAfxW__className {
+  font-family: kanit, kanit Fallback;
+}
+
+.kanit_aed72a9a-module__zhAfxW__variable {
+  --font-kanit: "kanit", "kanit Fallback";
+}
+
+/*# sourceMappingURL=src_app_kanit_aed72a9a_module_css_bad6b30c._.single.css.map*/

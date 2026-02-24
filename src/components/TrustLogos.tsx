@@ -1,58 +1,57 @@
-import React from 'react';
+"use client";
+
 import { motion } from 'framer-motion';
+
 export function TrustLogos() {
   const logos = [
-  'Client A',
-  'Client B',
-  'Client C',
-  'Client D',
-  'Client E',
-  'Client F'];
+    'Allbirds',
+    'Gymshark',
+    'MVMT',
+    'Brooklinen',
+    'Ruggable',
+    'Chubbies',
+  ];
+
+  // Repeat logos for a seamless infinite loop
+  const displayLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="w-full bg-slate-50 border-y border-slate-200">
-      <div className="max-w-container mx-auto px-6 py-16">
-        <motion.p
-          initial={{
-            opacity: 0
-          }}
-          whileInView={{
-            opacity: 1
-          }}
-          viewport={{
-            once: true
-          }}
-          className="text-center text-sm text-slate-500 uppercase tracking-wider mb-8">
+    <section className="w-full bg-[#001E21] py-6 overflow-hidden">
+      <div className="max-w-container mx-auto px-8 flex flex-col md:flex-row items-center">
+        {/* Left Heading */}
+        <div className="shrink-0 mb-6 md:mb-0 md:mr-12 md:pr-12">
+          <h6 className="text-[10px] md:text-[12px] font-bold text-white uppercase tracking-[0.2em] leading-tight">
+            Trusted by leading <br />
+            Shopify brands
+          </h6>
+        </div>
 
-          Trusted by leading brands
-        </motion.p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {logos.map((logo, index) =>
+        {/* Continuous Marquee Container */}
+        <div className="relative flex-1 overflow-hidden">
+          {/* Gradient Fades for Smoothness */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#001E21] via-[#001E21/50 to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#001E21] via-[#001E21]/50 to-transparent z-10" />
+
           <motion.div
-            key={index}
-            initial={{
-              opacity: 0,
-              y: 10
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0
-            }}
-            viewport={{
-              once: true
-            }}
+            className="flex items-center gap-16 md:gap-24"
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
-              delay: index * 0.1
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
             }}
-            className="flex items-center justify-center">
-
-              <div className="text-slate-400 font-medium text-lg opacity-60">
+          >
+            {displayLogos.map((logo, index) => (
+              <div
+                key={index}
+                className="text-white text-lg md:text-xl font-bold whitespace-nowrap tracking-wide"
+              >
                 {logo}
               </div>
-            </motion.div>
-          )}
+            ))}
+          </motion.div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
