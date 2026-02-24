@@ -3,31 +3,6 @@
 import { motion } from 'framer-motion';
 
 export function Process() {
-  const steps = [
-    {
-      number: '01',
-      title: 'Discovery',
-      description:
-        'Technical audit, requirements gathering, and strategic planning to understand your business goals and constraints.'
-    },
-    {
-      number: '02',
-      title: 'Design',
-      description:
-        'Structured design system creation with focus on conversion optimization and brand consistency across all touchpoints.'
-    },
-    {
-      number: '03',
-      title: 'Build',
-      description:
-        'Clean code implementation following Shopify best practices with continuous testing and quality assurance.'
-    },
-    {
-      number: '04',
-      title: 'Launch',
-      description:
-        'Careful deployment with monitoring, performance validation, and comprehensive documentation for your team.'
-    }];
 
   return (
     <section id="process" className="w-full bg-[#001E21] relative overflow-hidden">
