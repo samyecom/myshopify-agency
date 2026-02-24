@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -47,6 +47,16 @@ export function Testimonials() {
   const displayTestimonials = [...testimonials, ...testimonials];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      setSlidesPerView(window.innerWidth < 1200 ? 1 : 3);
+    };
+    updateSlidesPerView();
+    window.addEventListener('resize', updateSlidesPerView);
+    return () => window.removeEventListener('resize', updateSlidesPerView);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -97,7 +107,7 @@ export function Testimonials() {
           <div className="overflow-hidden">
             <motion.div
               className="flex gap-6"
-              animate={{ x: `-${currentIndex * (100 / (typeof window !== 'undefined' && window.innerWidth < 1200 ? 1 : 3))}%` }}
+              animate={{ x: `-${currentIndex * (100 / slidesPerView)}%` }}
               transition={{ type: "spring", stiffness: 200, damping: 25 }}
             >
               {displayTestimonials.map((t, index) => (

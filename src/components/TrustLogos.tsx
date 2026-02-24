@@ -29,7 +29,7 @@ export function TrustLogos() {
         {/* Continuous Marquee Container */}
         <div className="relative flex-1 overflow-hidden">
           {/* Gradient Fades for Smoothness */}
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#001E21] via-[#001E21/50 to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#001E21] via-[#001E21]/50 to-transparent z-10" />
           <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#001E21] via-[#001E21]/50 to-transparent z-10" />
 
           <motion.div
