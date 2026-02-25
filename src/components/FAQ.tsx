@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDownIcon } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -35,61 +35,76 @@ export function FAQ() {
     }];
 
   return (
-    <section id="faq" className="w-full bg-[#013D44] py-12 md:py-12">
-      <div className="max-w-container mx-auto px-6 md:px-8">
+    <section id="faq" className="w-full bg-[#001E21] pt-0 pb-20 relative overflow-hidden">
+
+      <div className="max-w-container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-5"
         >
-          <h2 className="text-3xl md:text-[30px] font-semibold text-white mb-4 font-heading">
+          <span className="text-[#CAF389] font-bold text-sm tracking-[0.2em] uppercase mb-4 block">
+            Common Questions
+          </span>
+          <h2 className="text-2xl md:text-[30px] font-bold text-white mb-6 font-heading">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-300 text-lg md:text-[16px] max-w-2xl mx-auto leading-relaxed">
-            Quick answers to common questions about working with us.
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            Everything you need to know about scaling your brand with our expert Shopify services.
           </p>
         </motion.div>
 
-        <div className="space-y-3">
-          {faqs.map((faq, index) =>
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="bg-white rounded-[12px] overflow-hidden shadow-sm"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 md:px-8 py-5 flex items-center justify-between text-left group"
-                aria-expanded={openIndex === index}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`group rounded-xl border transition-all duration-300 ${isOpen
+                  ? 'bg-[#013D44]/40 border-[#CAF389]/20 shadow-xl'
+                  : 'bg-white/5 border-white/5 hover:border-white/10'
+                  }`}
               >
-                <span className="text-[15px] md:text-[16px] font-medium text-slate-800 pr-8">
-                  {faq.question}
-                </span>
-                <ChevronDownIcon
-                  className={`h-5 w-5 text-slate-400 transition-transform duration-300 shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
-                />
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                  >
-                    <div className="px-6 md:px-8 pb-6 text-slate-500 leading-relaxed text-[15px] border-t border-slate-50 pt-4">
-                      {faq.answer}
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full px-8 py-4 flex items-center justify-between text-left"
+                >
+                  <span className={`text-lg md:text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#CAF389]' : 'text-white'
+                    }`}>
+                    {faq.question}
+                  </span>
+                  <div className={`flex-shrink-0 ml-4 transition-transform duration-500 ${isOpen ? 'rotate-45' : 'rotate-0'
+                    }`}>
+                    <div className={`p-2 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#CAF389] text-[#001E21]' : 'bg-white/10 text-white'
+                      }`}>
+                      <Plus size={20} />
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          )}
+                  </div>
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    >
+                      <div className="px-8 pb-8 text-slate-400 leading-relaxed text-lg border-t border-white/5 pt-6">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

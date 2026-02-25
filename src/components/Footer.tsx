@@ -11,7 +11,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="w-full bg-[#013D44] text-white py-12 px-6 md:px-8">
+        <footer className="w-full bg-[#013D44] text-white py-5 px-6 md:px-8">
             <div className="max-w-container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 text-center md:text-left">
                 {/* Logo */}
                 <a href="/" className="inline-block shrink-0">

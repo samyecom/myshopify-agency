@@ -45,8 +45,8 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="w-full bg-[#001E21] py-12 md:py-12 px-6 md:px-8">
-      <div className="max-w-container mx-auto">
+    <section id="services" className="w-full bg-[#001E21] pb-10 md:pb-12">
+      <div className="max-w-container px-8 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,30 +62,41 @@ export function Services() {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-6 md:px-0">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{
-                y: -10,
+                y: -8,
                 transition: { duration: 0.3, ease: "easeOut" }
               }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group relative"
             >
-              <div className="bg-[#013D44] p-8 rounded-[20px] h-full border border-white/5 group-hover:border-[#CAF389]/30 group-hover:bg-[#024d56] transition-all duration-300 shadow-xl shadow-black/20 group-hover:shadow-[#CAF389]/5">
-                <div className="mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-[#CAF389]" strokeWidth={2.5} />
+              {/* Card Background with Gradient and Glow */}
+              <div className="relative h-full bg-[#002D31] rounded-[24px] p-6 border border-white/5 transition-all duration-300 group-hover:border-[#CAF389]/40 group-hover:bg-[#00383D] overflow-hidden shadow-2xl">
+                {/* Subtle Radial Glow on Hover */}
+                <div className="absolute -inset-px bg-gradient-to-br from-[#CAF389]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Icon Container */}
+                <div className="relative mb-6 flex items-center justify-center w-12 h-12 rounded-xl bg-[#013D44] border border-white/10 group-hover:bg-[#CAF389] group-hover:border-transparent transition-all duration-300 text-[#CAF389] group-hover:text-[#001E21] shadow-lg">
+                  <service.icon className="w-6 h-6" strokeWidth={2} />
+                  {/* Outer Glow for Icon */}
+                  <div className="absolute inset-0 rounded-xl bg-[#CAF389]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#CAF389] transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-slate-300 leading-relaxed text-[15px] group-hover:text-white transition-colors duration-300">
-                  {service.description}
-                </p>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#CAF389] transition-colors duration-300 font-heading">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed text-[14px] group-hover:text-slate-200 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

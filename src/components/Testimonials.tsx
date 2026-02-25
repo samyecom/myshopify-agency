@@ -13,7 +13,8 @@ export function Testimonials() {
       name: 'Arjun Mehta',
       brand: 'Shapemour',
       initials: 'AM',
-      flag: 'https://flagcdn.com/w40/in.png'
+      flag: 'https://flagcdn.com/w40/in.png',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop'
     },
     {
       logoImg: '/nutrisum.png',
@@ -22,7 +23,8 @@ export function Testimonials() {
       name: 'Priya Sharma',
       brand: 'Nutrisum',
       initials: 'PS',
-      flag: 'https://flagcdn.com/w40/in.png'
+      flag: 'https://flagcdn.com/w40/in.png',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop'
     },
     {
       logoImg: '/houseofr.png',
@@ -31,7 +33,8 @@ export function Testimonials() {
       name: 'Rohan Gupta',
       brand: 'House of R',
       initials: 'RG',
-      flag: 'https://flagcdn.com/w40/in.png'
+      flag: 'https://flagcdn.com/w40/in.png',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop'
     },
     {
       logoImg: '/logos/enerj.png',
@@ -40,132 +43,116 @@ export function Testimonials() {
       name: 'David Park',
       brand: 'Enerj',
       initials: 'DP',
-      flag: 'https://flagcdn.com/w40/gb.png'
+      flag: 'https://flagcdn.com/w40/gb.png',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop'
     }
   ];
 
-  // Duplicate testimonials for seamless looping
-  const displayTestimonials = [...testimonials, ...testimonials];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [slidesPerView, setSlidesPerView] = useState(3);
-
-  useEffect(() => {
-    const updateSlidesPerView = () => {
-      if (window.innerWidth < 768) setSlidesPerView(1);
-      else if (window.innerWidth < 1200) setSlidesPerView(2);
-      else setSlidesPerView(3);
-    };
-    updateSlidesPerView();
-    window.addEventListener('resize', updateSlidesPerView);
-    return () => window.removeEventListener('resize', updateSlidesPerView);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  // Triple the testimonials for a redundant seamless loop in the marquee
+  const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="w-full bg-[#001E21] py-12 md:py-24 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-container mx-auto">
-        <div className="text-center mb-5">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-[30px] font-semibold text-white mb-4 font-heading">
-              What Our Partners Say
-            </h2>
-            <p className="text-[#98A3A4] text-lg md:text-[16px] leading-relaxed max-w-2xl mx-auto">
-              Hear from the brands we've helped grow on Shopify.
-            </p>
-          </motion.div>
+    <section id="testimonials" className="w-full bg-[#001E21] py-8 md:pb-20 overflow-hidden relative">
+      <div className='max-w-container mx-auto bg-gradient-to-b from-[#001E21] to-[#013D44] py-10 rounded-[20px] border border-white/5 shadow-2xl relative overflow-hidden group'>
+        {/* Background Earth Map */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen overflow-hidden">
+          <img
+            src="/earth.webp"
+            alt="Earth Map"
+            className="w-full h-full object-cover scale-110 opacity-60"
+          />
         </div>
 
-        <div className="relative">
-          {/* Navigation Controls */}
-          <div className="absolute top-1/2 -left-12 -translate-y-1/2 z-10 hidden xl:block">
-            <button
-              onClick={prevSlide}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#CAF389] hover:text-[#013D44] transition-all duration-300"
+        {/* Subtle Inner Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#CAF389_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
+
+        <div className="max-w-container mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <ChevronLeft size={20} />
-            </button>
-          </div>
-          <div className="absolute top-1/2 -right-12 -translate-y-1/2 z-10 hidden xl:block">
-            <button
-              onClick={nextSlide}
-              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-[#CAF389] hover:text-[#013D44] transition-all duration-300"
-            >
-              <ChevronRight size={20} />
-            </button>
+              <h2 className="text-3xl md:text-[30px] font-semibold text-white mb-4 font-heading">
+                What Our Partners Say
+              </h2>
+              <p className="text-[#98A3A4] text-lg md:text-[16px] leading-relaxed max-w-2xl mx-auto">
+                Hear from the brands we've helped grow on Shopify.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="overflow-hidden">
+          <div className="relative overflow-hidden w-full py-2">
             <motion.div
-              className="flex gap-6"
-              animate={{ x: `-${currentIndex * (100 / slidesPerView)}%` }}
-              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              className="flex gap-6 w-fit"
+              animate={{ x: [0, "-33.333%"] }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 40,
+                  ease: "linear",
+                },
+              }}
+              whileHover={{ transition: { x: { duration: 1000 } } }} // Effectively pause on hover
             >
-              {displayTestimonials.map((t, index) => (
+              {marqueeItems.map((t, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] shrink-0"
+                  className="w-[300px] md:w-[380px] shrink-0"
                 >
-                  <div className="bg-[#013D44] p-8 md:p-10 rounded-[20px] h-full border border-white/5 relative flex flex-col group transition-all duration-300">
-                    {/* Top Right Corner Icon (Flag or Placeholder) */}
-                    {t.flag ? (
-                      <div className="absolute top-0 right-0 w-12 h-8 rounded-tr-[20px] rounded-bl-[12px] overflow-hidden shadow-sm z-20">
+                  <div className="bg-[#001e21] p-6 md:p-8 rounded-[24px] h-full border border-white/5 relative flex flex-col group transition-all duration-300 hover:border-[#CAF389]/30 hover:scale-[1.02] shadow-xl">
+                    {/* Top Right Corner Icon (Flag) */}
+                    {t.flag && (
+                      <div className="absolute top-4 right-4 w-10 h-7 rounded-lg overflow-hidden shadow-sm z-20">
                         <img
                           src={t.flag}
-                          alt="Flag"
+                          alt="Country Flag"
                           className="w-full h-full object-cover"
                         />
-                      </div>
-                    ) : (
-                      <div className="absolute top-0 right-0 w-10 h-10 bg-[#D9D9D9]/20 rounded-tr-[20px] rounded-bl-[12px] flex items-center justify-center z-20 border-l border-b border-white/5">
-                        {/* Matches the corner styling in the screenshot */}
                       </div>
                     )}
 
                     {/* Top Bar (Logo Image or Text) */}
-                    <div className="flex justify-between items-start mb-8">
-                      <div className="h-14 flex items-center">
+                    <div className="flex justify-between items-start mb-8 pr-12">
+                      <div className="h-10 flex items-center">
                         {t.logoImg ? (
                           <img
                             src={t.logoImg}
                             alt={t.logoText}
-                            className="h-full w-auto max-w-[180px] object-contain brightness-0 invert opacity-100"
+                            className="h-full w-auto max-w-[140px] object-contain brightness-0 invert opacity-100"
                           />
                         ) : (
-                          <span className="text-white font-heading font-bold text-2xl">{t.logoText}</span>
+                          <span className="text-white font-heading font-bold text-xl">{t.logoText}</span>
                         )}
                       </div>
                     </div>
 
                     {/* Quote */}
                     <div className="mb-10 flex-1">
-                      <p className="text-white text-[15px] leading-relaxed">
+                      <p className="text-white text-[15px] leading-relaxed line-clamp-4">
                         "{t.quote}"
                       </p>
                     </div>
 
-                    {/* Bottom Info */}
                     <div className="flex items-center gap-4">
-                      <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#013D44] font-bold text-[14px] shrink-0">
-                        {t.initials}
+                      <div className="w-11 h-11 rounded-full overflow-hidden bg-white flex items-center justify-center text-[#013D44] font-bold text-[14px] shrink-0 border border-white/10">
+                        {t.image ? (
+                          <img
+                            src={t.image}
+                            alt={t.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          t.initials
+                        )}
                       </div>
                       <div>
-                        <h4 className="text-white font-medium text-[18px]">
+                        <h4 className="text-white font-medium text-[16px]">
                           {t.name}
                         </h4>
-                        <p className="text-[#98A3A4] text-[14px]">
+                        <p className="text-[#98A3A4] text-[13px]">
                           {t.brand}
                         </p>
                       </div>
@@ -175,22 +162,6 @@ export function Testimonials() {
               ))}
             </motion.div>
           </div>
-        </div>
-
-        {/* Mobile indicators or controls */}
-        <div className="flex justify-center gap-4 mt-10 xl:hidden">
-          <button
-            onClick={prevSlide}
-            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white"
-          >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white"
-          >
-            <ChevronRight size={24} />
-          </button>
         </div>
       </div>
     </section>

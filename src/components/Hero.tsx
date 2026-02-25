@@ -1,36 +1,68 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/Button';
 
+import { PixelBlast } from './ui/PixelBlast';
+
 export function Hero() {
+  const words = ["High–Converting Stores", "Revenue-Driving Stores", "Performance-Built Stores"];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % words.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="w-full bg-[#013D44] relative overflow-hidden">
-
-
+    <section className="w-full bg-[#002D31] relative overflow-hidden min-h-[500px] flex items-center">
+      <div className="absolute inset-0 z-0">
+        <PixelBlast
+          variant="circle"
+          pixelSize={4}
+          color="#2A676A"
+          patternScale={5.5}
+          patternDensity={2}
+          enableRipples
+          rippleSpeed={0.3}
+          rippleThickness={0.1}
+          rippleIntensityScale={1}
+          speed={1}
+          transparent
+          edgeFade={0.8}
+        />
+      </div>
       <div className="max-w-container mx-auto px-6 md:px-8 pt-28 pb-8 md:pt-32 md:pb-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -30
-            }}
-            animate={{
-              opacity: 1,
-              x: 0
-            }}
-            transition={{
-              duration: 0.8
-            }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-
             <h6 className="inline-block text-[#C5E87F] font-semibold tracking-[0.2em] text-[12px] md:text-[14px] mb-6 uppercase">
               Shopify Development Partner
             </h6>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-6 leading-[1.1] tracking-tight">
-              Your Shopify Development Partner for High–Converting Stores
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-white mb-6 leading-[1.1] tracking-tight">
+              Your Shopify Development Partner for{" "}
+              <span className="block sm:inline-block relative h-[1.2em] overflow-hidden align-top">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={words[index]}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="block text-[#CAF389]"
+                  >
+                    {words[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-[18px] text-slate-300 mb-8 md:mb-10 leading-relaxed max-w-xl">
@@ -78,7 +110,7 @@ export function Hero() {
                 ease: "easeInOut",
               },
             }}
-            className="relative w-full max-w-[500px] lg:max-w-full mx-auto order-1 lg:order-2"
+            className="relative w-full max-w-[500px] lg:max-w-[500px] mx-auto order-1 lg:order-2"
           >
             <img
               src="/hero-img.png"
@@ -88,7 +120,7 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </section >
   );
 
 }

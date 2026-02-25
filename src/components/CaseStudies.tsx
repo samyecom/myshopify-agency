@@ -10,7 +10,6 @@ export function CaseStudies() {
       title: 'Fashion Brand Store Rebuild',
       description:
         'Complete platform migration with 40% improvement in page load and 25% increase in conversion rate.',
-      metric: '+25% CVR',
       image:
         'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop'
     },
@@ -18,7 +17,6 @@ export function CaseStudies() {
       title: 'Electronics Retailer Optimization',
       description:
         'Checkout flow redesign and performance optimization resulting in significant revenue growth.',
-      metric: '+$2M ARR',
       image:
         'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&h=600&fit=crop'
     },
@@ -26,14 +24,13 @@ export function CaseStudies() {
       title: 'Beauty Brand Custom Build',
       description:
         'Custom Shopify Plus store with advanced product customization and subscription functionality.',
-      metric: '50K+ Orders',
       image:
         'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=600&fit=crop'
     }];
 
   return (
-    <section id="work" className="w-full bg-[#013D44] py-12 md:py-12">
-      <div className="max-w-container mx-auto px-6 md:px-8">
+    <section id="work" className="w-full bg-[#002d31] py-12 px-6 md:px-8">
+      <div className="max-w-container px-8 mx-auto">
         <motion.div
           initial={{
             opacity: 0,
@@ -47,17 +44,22 @@ export function CaseStudies() {
             once: true
           }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-6">
-
-          <h2 className="text-3xl md:text-[30px] font-bold text-white mb-4 font-heading">
-            Results That Speak for Themselves
-          </h2>
-          <p className="text-lg md:text-[16px] text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Results-driven projects that demonstrate technical precision and creative excellence.
-          </p>
+          className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10"
+        >
+          <div className="max-w-3xl">
+            <h2 className="text-[20px] md:text-[30px] lg:text-[34px] font-medium text-white leading-[1.1] tracking-tight">
+              Results That Speak for <br className="hidden md:block" />
+              Themselves
+            </h2>
+          </div>
+          <div className="max-w-[420px] md:text-left">
+            <p className="text-[#c3c3c3] text-[18px] leading-relaxed">
+              Results-driven projects that demonstrate technical precision and creative excellence.
+            </p>
+          </div>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {cases.map((caseStudy, index) =>
             <motion.div
               key={index}
@@ -76,32 +78,25 @@ export function CaseStudies() {
               transition={{
                 duration: 0.5,
                 delay: index * 0.1
-              }}>
-
-              <Card className="overflow-hidden !bg-[#001E21] border-white/5 hover:border-[#CAF389]/30 transition-all duration-300 group cursor-pointer shadow-xl shadow-black/20 rounded-[12px]">
-                <div className="aspect-[4/3] bg-slate-800 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
-                </div>
-                <div className="p-8">
-                  <div className="inline-block px-3 py-1 bg-[#CAF389] text-[#013D44] text-[12px] font-bold rounded-full mb-4 tracking-wide">
-                    {caseStudy.metric}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#CAF389] transition-colors duration-300 font-heading">
-                    {caseStudy.title}
-                  </h3>
-                  <p className="text-slate-300 mb-6 text-[15px] leading-relaxed">
-                    {caseStudy.description}
-                  </p>
-                  <div className="flex items-center text-[#CAF389] font-bold text-[14px] group-hover:translate-x-2 transition-transform duration-300">
-                    View Case Study
-                    <ArrowRightIcon className="ml-2 h-4 w-4" />
-                  </div>
-                </div>
-              </Card>
+              }}
+              className="flex flex-col group cursor-pointer"
+            >
+              <div className="aspect-[16/10] overflow-hidden rounded-[16px] mb-6 relative">
+                <img
+                  src={caseStudy.image}
+                  alt={caseStudy.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-[#CAF389] transition-colors duration-300">
+                  {caseStudy.title}
+                </h3>
+                <p className="text-[#c3c3c3] text-[14px] md:text-[15px] leading-relaxed group-hover:text-white transition-colors duration-300">
+                  {caseStudy.description}
+                </p>
+              </div>
             </motion.div>
           )}
         </div>
