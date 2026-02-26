@@ -52,10 +52,10 @@ export function Process() {
   return (
     <section
       id="process"
-      className="w-full py-8 px-8 relative overflow-hidden"
+      className="w-full py-8 px-4 md:px-8 relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, rgb(0, 24, 26) 0%, rgb(0, 30, 33) 70%)' }}
     >
-      <div className="max-w-container px-8 mx-auto relative z-10">
+      <div className="max-w-container px-0 md:px-8 mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export function Process() {
                   {step.tag}
                 </span>
                 {step.arrow && (
-                  <svg className="w-16 h-6 text-[#CAF389]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="hidden md:block w-16 h-6 text-[#CAF389]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"

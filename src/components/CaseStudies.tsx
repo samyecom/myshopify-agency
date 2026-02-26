@@ -29,8 +29,8 @@ export function CaseStudies() {
     }];
 
   return (
-    <section id="work" className="w-full bg-[#002d31] py-12 px-6 md:px-8">
-      <div className="max-w-container px-8 mx-auto">
+    <section id="work" className="w-full bg-[#002d31] py-8 md:py-12 px-4 md:px-8">
+      <div className="max-w-container px-0 md:px-8 mx-auto">
         <motion.div
           initial={{
             opacity: 0,
@@ -44,22 +44,22 @@ export function CaseStudies() {
             once: true
           }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-10"
+          className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 mb-6 md:mb-10 text-center md:text-left"
         >
-          <div className="max-w-3xl">
+          <div className="max-w-3xl w-full">
             <h2 className="text-[20px] md:text-[30px] lg:text-[34px] font-medium text-white leading-[1.1] tracking-tight">
               Results That Speak for <br className="hidden md:block" />
               Themselves
             </h2>
           </div>
-          <div className="max-w-[420px] md:text-left">
-            <p className="text-[#c3c3c3] text-[18px] leading-relaxed">
+          <div className="max-w-[420px] mx-auto md:mx-0">
+            <p className="text-[#c3c3c3] text-[16px] md:text-[18px] leading-relaxed">
               Results-driven projects that demonstrate technical precision and creative excellence.
             </p>
           </div>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {cases.map((caseStudy, index) =>
             <motion.div
               key={index}
@@ -81,7 +81,7 @@ export function CaseStudies() {
               }}
               className="flex flex-col group cursor-pointer"
             >
-              <div className="aspect-[16/10] overflow-hidden rounded-[16px] mb-6 relative">
+              <div className="aspect-[16/10] overflow-hidden rounded-[16px] mb-4 md:mb-6 relative">
                 <img
                   src={caseStudy.image}
                   alt={caseStudy.title}

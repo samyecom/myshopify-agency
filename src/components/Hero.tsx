@@ -18,7 +18,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="w-full bg-[#002D31] relative overflow-hidden min-h-[500px] flex items-center">
+    <section className="w-full bg-[#002D31] relative overflow-hidden flex flex-col md:block md:min-h-[500px] md:flex-row md:items-center">
       <div className="absolute inset-0 z-0">
         <PixelBlast
           variant="circle"
@@ -35,19 +35,19 @@ export function Hero() {
           edgeFade={0.8}
         />
       </div>
-      <div className="max-w-container mx-auto px-6 md:px-8 pt-28 pb-8 md:pt-32 md:pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-container mx-auto px-4 md:px-8 pt-20 pb-8 md:pt-32 md:pb-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <h6 className="inline-block text-[#C5E87F] font-semibold tracking-[0.2em] text-[12px] md:text-[14px] mb-6 uppercase">
+            <h6 className="inline-block text-[#C5E87F] font-semibold tracking-[0.2em] text-[12px] md:text-[14px] mb-4 md:mb-6 uppercase">
               Shopify Development Partner
             </h6>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-white mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-semibold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Your Shopify Development Partner for{" "}
               <span className="block sm:inline-block relative h-[1.2em] overflow-hidden align-top">
                 <AnimatePresence mode="wait">
@@ -65,7 +65,7 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-[18px] text-slate-300 mb-8 md:mb-10 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg md:text-[18px] text-slate-300 mb-6 md:mb-10 leading-relaxed max-w-xl">
               We design, build, and optimize Shopify stores that
               turn visitors into customers — backed by data, not guesswork.
             </p>
@@ -110,7 +110,7 @@ export function Hero() {
                 ease: "easeInOut",
               },
             }}
-            className="relative w-full max-w-[500px] lg:max-w-[500px] mx-auto order-1 lg:order-2"
+            className="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] mx-auto order-1 lg:order-2"
           >
             <img
               src="/hero-img.png"

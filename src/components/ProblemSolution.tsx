@@ -31,7 +31,7 @@ export function ProblemSolution() {
         />
       </div>
 
-      <div className="max-w-container mx-auto px-6 relative z-10">
+      <div className="max-w-container mx-auto px-4 relative z-10">
         <div className="text-center mb-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

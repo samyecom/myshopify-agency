@@ -72,20 +72,25 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
+                        className="md:hidden bg-[#013D44] border-t border-white/5 overflow-hidden"
                     >
-                        <div className="px-6 py-10 flex flex-col gap-8 bg-[#013D44] border-t border-white/10 min-h-[60vh] justify-center items-center text-center">
+                        <div className="px-6 py-8 flex flex-col gap-6 bg-[#013D44] border-t border-white/10 items-center text-center">
                             {navLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-2xl font-semibold text-white/90 hover:text-[#CAF389] transition-colors"
+                                    className="text-lg font-medium text-white/90 hover:text-[#CAF389] transition-colors"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <Button variant="primary" href="#cta" className="w-full max-w-xs py-4 text-lg bg-[#CAF389] hover:bg-[#CAF389]/90 text-[#013D44] border-none rounded-full font-bold" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Button
+                                variant="primary"
+                                href="#cta"
+                                className="w-full max-w-[200px] mt-2 py-3 text-[15px] !bg-[#CAF389] hover:bg-[#CAF389]/90 !text-[#013D44] border-none rounded-xl font-bold"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
                                 Get Started
                             </Button>
                         </div>

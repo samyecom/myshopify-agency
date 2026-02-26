@@ -45,8 +45,8 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="w-full bg-[#001E21] pb-10 md:pb-12">
-      <div className="max-w-container px-8 mx-auto">
+    <section id="services" className="w-full bg-[#001E21] pb-8 md:pb-12">
+      <div className="max-w-container px-4 md:px-8 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,15 +54,15 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-5"
         >
-          <h2 className="text-3xl md:text-[30px] font-bold text-white mb-4 font-heading">
+          <h2 className="text-2xl md:text-[30px] font-bold text-white mb-3 md:mb-4 font-heading px-4">
             Everything Your Shopify Store Needs
           </h2>
-          <p className="text-slate-400 text-lg md:text-[16px] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-base md:text-[16px] max-w-2xl mx-auto leading-relaxed px-6">
             From initial build to ongoing optimization, we cover every aspect of your Shopify presence.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-6 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 px-0 md:px-0">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -77,7 +77,7 @@ export function Services() {
               className="group relative"
             >
               {/* Card Background with Gradient and Glow */}
-              <div className="relative h-full bg-[#002D31] rounded-[24px] p-6 border border-white/5 transition-all duration-300 group-hover:border-[#CAF389]/40 group-hover:bg-[#00383D] overflow-hidden shadow-2xl">
+              <div className="relative h-full bg-[#002D31] rounded-[24px] p-5 md:p-6 border border-white/5 transition-all duration-300 group-hover:border-[#CAF389]/40 group-hover:bg-[#00383D] overflow-hidden shadow-2xl">
                 {/* Subtle Radial Glow on Hover */}
                 <div className="absolute -inset-px bg-gradient-to-br from-[#CAF389]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

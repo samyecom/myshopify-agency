@@ -26,7 +26,7 @@ export function FinalCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative bg-[#001e2100]/[0.0] backdrop-blur-[5px] rounded-[20px] p-10 md:p-10 overflow-hidden border border-white/40 shadow-[0_40px_100px_rgba(0,0,0,0.4)]"
+          className="relative bg-[#001e2100]/[0.0] backdrop-blur-[5px] rounded-[20px] p-6 md:p-10 overflow-hidden border border-white/40 shadow-[0_40px_100px_rgba(0,0,0,0.4)]"
         >
           {/* White Glass Refractions */}
           <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.05] via-transparent to-white/[0.1] pointer-events-none" />
@@ -48,7 +48,7 @@ export function FinalCTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-2xl md:text-[30px] font-bold text-white mb-8 leading-[1.1] font-heading max-w-3xl mx-auto"
+              className="text-2xl md:text-[30px] font-bold text-white mb-6 md:mb-8 leading-[1.1] font-heading max-w-3xl mx-auto"
             >
               Ready to Build a Store That <span className="text-[#CAF389]">Converts?</span>
             </motion.h2>
@@ -58,7 +58,7 @@ export function FinalCTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed"
+              className="text-base md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
             >
               Let&apos;s discuss your Shopify project. No pitches, no pressure — just
               an honest conversation about how to scale your business to the next level.
@@ -75,7 +75,7 @@ export function FinalCTA() {
                 variant="primary"
                 href="https://wa.me/916283588829"
                 target="_blank"
-                className="group relative flex items-center gap-3 text-lg px-8 py-2 !bg-[#CAF389] hover:bg-[#b5e07a] !text-[#001E21] font-bold rounded-full border-none shadow-2xl shadow-[#CAF389]/20 transition-all hover:scale-105 active:scale-95 overflow-hidden"
+                className="group relative flex items-center gap-3 text-base md:text-lg px-8 py-4 md:py-2 !bg-[#CAF389] hover:bg-[#b5e07a] !text-[#001E21] font-bold rounded-xl md:rounded-full border-none shadow-2xl shadow-[#CAF389]/20 transition-all hover:scale-105 active:scale-95 overflow-hidden"
               >
                 <span>Schedule a Free Consultation</span>
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

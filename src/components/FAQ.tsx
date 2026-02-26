@@ -35,9 +35,8 @@ export function FAQ() {
     }];
 
   return (
-    <section id="faq" className="w-full bg-[#001E21] pt-0 pb-20 relative overflow-hidden">
-
-      <div className="max-w-container mx-auto px-6 relative z-10">
+    <section id="faq" className="w-full bg-[#001E21] pt-0 pb-0 md:pb-20 relative overflow-hidden">
+      <div className="max-w-container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +50,7 @@ export function FAQ() {
           <h2 className="text-2xl md:text-[30px] font-bold text-white mb-6 font-heading">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Everything you need to know about scaling your brand with our expert Shopify services.
           </p>
         </motion.div>
@@ -75,7 +74,7 @@ export function FAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full px-8 py-4 flex items-center justify-between text-left"
                 >
-                  <span className={`text-lg md:text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#CAF389]' : 'text-white'
+                  <span className={`text-[16px] md:text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-[#CAF389]' : 'text-white'
                     }`}>
                     {faq.question}
                   </span>
@@ -96,7 +95,7 @@ export function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
-                      <div className="px-8 pb-8 text-slate-400 leading-relaxed text-lg border-t border-white/5 pt-6">
+                      <div className="px-8 pb-8 text-slate-400 leading-relaxed text-[15px] md:text-lg border-t border-white/5 pt-6">
                         {faq.answer}
                       </div>
                     </motion.div>
