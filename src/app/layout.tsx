@@ -51,6 +51,9 @@ const openSans = localFont({
 export const metadata = {
     title: "MyShopify Agency | Precision Shopify Engineering",
     description: "We build high-performance Shopify stores for brands that need precision engineering.",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({
