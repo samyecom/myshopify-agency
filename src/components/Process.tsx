@@ -72,10 +72,6 @@ export function Process() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connector Arrows (Desktop) */}
-          <div className="hidden md:block absolute top-[20%] left-[30%] w-[10%] border-t-2 border-dashed border-white/30 z-0" />
-          <div className="hidden md:block absolute top-[20%] left-[64%] w-[10%] border-t-2 border-dashed border-white/30 z-0" />
-
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -91,8 +87,20 @@ export function Process() {
                   {step.tag}
                 </span>
                 {step.arrow && (
-                  <svg className="w-8 h-4 text-[#CAF389]/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg className="w-16 h-6 text-[#CAF389]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      strokeDasharray="2 3"
+                      d="M2 12h17"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M16 8l4 4-4 4"
+                    />
                   </svg>
                 )}
               </div>
