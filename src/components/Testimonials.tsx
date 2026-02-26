@@ -52,7 +52,7 @@ export function Testimonials() {
   const marqueeItems = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="w-full bg-[#001E21] py-8 md:pb-20 overflow-hidden relative px-4 md:px-0">
+    <section id="testimonials" className="w-full bg-[#001E21] md:px-4 lg:px-8 py-8 md:pb-8 lg:pb-8 overflow-hidden relative px-4 md:px-0">
       <div className='max-w-container mx-auto bg-gradient-to-b from-[#001E21] to-[#013D44] py-10 rounded-[20px] border border-white/5 shadow-2xl relative overflow-hidden group'>
         {/* Background Earth Map */}
         <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-screen overflow-hidden">
@@ -66,7 +66,7 @@ export function Testimonials() {
         {/* Subtle Inner Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#CAF389_0%,_transparent_70%)] opacity-[0.03] pointer-events-none" />
 
-        <div className="max-w-container mx-auto px-0 md:px-8 relative z-10">
+        <div className="max-w-container mx-auto px-0 relative z-10">
           <div className="text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

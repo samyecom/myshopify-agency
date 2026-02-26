@@ -52,10 +52,10 @@ export function Process() {
   return (
     <section
       id="process"
-      className="w-full py-8 px-4 md:px-8 relative overflow-hidden"
+      className="w-full py-8 px-4 md:px-4 lg:px-8 relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, rgb(0, 24, 26) 0%, rgb(0, 30, 33) 70%)' }}
     >
-      <div className="max-w-container px-0 md:px-8 mx-auto relative z-10">
+      <div className="max-w-container px-4 md:px-0 lg:px-8 mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export function Process() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-[20px] md:text-[30px] font-bold text-white mb-4 font-heading">
+          <h2 className="text-[20px] md:text-[30px] font-semibold text-white mb-4 font-heading">
             Our Process
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export function Process() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 relative">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -79,7 +79,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="rounded-[16px] p-8 flex flex-col h-full border border-white/5 relative group hover:scale-[1.02] transition-transform duration-300 overflow-hidden"
+              className="rounded-[16px] p-6 md:p-10 lg:p-8 flex flex-col h-full border border-white/5 relative group hover:scale-[1.02] transition-transform duration-300 overflow-hidden"
               style={{ background: 'radial-gradient(circle at center, #013D44 0%, #001E21 100%)' }}
             >
               <div className="flex items-center gap-4 mb-6">
@@ -105,7 +105,7 @@ export function Process() {
                 )}
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-6 leading-tight font-heading group-hover:text-[#CAF389] transition-colors">
+              <h3 className="text-2xl md:text-[22px] lg:text-3xl font-semibold text-white mb-6 leading-tight font-heading group-hover:text-[#CAF389] transition-colors">
                 {step.title}
               </h3>
 

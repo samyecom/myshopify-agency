@@ -110,7 +110,7 @@ export function Hero() {
                 ease: "easeInOut",
               },
             }}
-            className="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] mx-auto order-1 lg:order-2"
+            className="relative w-full max-w-[500px] sm:max-w-full lg:max-w-[500px] mx-auto order-1 lg:order-2"
           >
             <img
               src="/hero-img.png"

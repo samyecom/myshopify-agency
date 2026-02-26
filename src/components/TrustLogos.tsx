@@ -26,11 +26,11 @@ export function TrustLogos() {
   const xTransform = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#001E21] overflow-hidden py-8 md:py-12">
-      <div className="max-w-container px-4 md:px-8 mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-0 text-center md:text-left">
+    <section ref={sectionRef} className="w-full bg-[#001E21] overflow-hidden py-8 md:py-10 lg:py-12">
+      <div className="max-w-container px-4 md:px-8 mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-0 text-center md:text-left">
         {/* Left Heading */}
         <div className="shrink-0">
-          <h6 className="text-[11px] md:text-[12px] font-bold text-white uppercase tracking-[0.2em] leading-tight opacity-80">
+          <h6 className="text-[11px] md:text-[13px] lg:text-[12px] font-bold text-white uppercase tracking-[0.2em] leading-tight opacity-80">
             Trusted by leading <br className="hidden md:block" />
             Shopify brands
           </h6>
@@ -43,13 +43,13 @@ export function TrustLogos() {
           <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#001E21] via-[#001E21]/50 to-transparent z-10" />
 
           <motion.div
-            className="flex items-center gap-12 md:gap-24"
+            className="flex items-center gap-12 md:gap-16 lg:gap-24"
             style={{ x: xTransform }}
           >
             {displayLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center min-w-[100px] h-6 md:h-10 brightness-0 invert transition-all duration-300 opacity-60 hover:opacity-100"
+                className="flex items-center justify-center min-w-[100px] h-6 md:h-8 lg:h-10 brightness-0 invert transition-all duration-300 opacity-60 hover:opacity-100"
               >
                 <img
                   src={logo}

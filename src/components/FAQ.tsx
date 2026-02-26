@@ -35,7 +35,7 @@ export function FAQ() {
     }];
 
   return (
-    <section id="faq" className="w-full bg-[#001E21] pt-0 pb-0 md:pb-20 relative overflow-hidden">
+    <section id="faq" className="w-full bg-[#001E21] pt-0 pb-0 md:pb-0 lg:px-8 relative overflow-hidden">
       <div className="max-w-container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
