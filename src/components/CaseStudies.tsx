@@ -10,22 +10,19 @@ export function CaseStudies() {
       title: 'Fashion Brand Store Rebuild',
       description:
         'Complete platform migration with 40% improvement in page load and 25% increase in conversion rate.',
-      image:
-        'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop'
+      image: '/case-studies/fashion.png'
     },
     {
       title: 'Electronics Retailer Optimization',
       description:
         'Checkout flow redesign and performance optimization resulting in significant revenue growth.',
-      image:
-        'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&h=600&fit=crop'
+      image: '/case-studies/electronics.png'
     },
     {
       title: 'Beauty Brand Custom Build',
       description:
         'Custom Shopify Plus store with advanced product customization and subscription functionality.',
-      image:
-        'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=600&fit=crop'
+      image: '/case-studies/beauty.png'
     }];
 
   return (
